@@ -2,7 +2,16 @@ import { Table, InputGroup, FormControl, Button, ButtonGroup } from 'react-boots
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-function App() {
+import Tabla from './components/tableComponent';
+
+import { EMPLEADOS } from './data/data';
+import { useState } from 'react';
+
+const App = () => {
+
+  //Estados
+  const empleados = useState(EMPLEADOS);
+
   return (
     <>
       <section className="container-fluid">
@@ -18,7 +27,7 @@ function App() {
           </InputGroup.Append>
         </InputGroup>
         <ButtonGroup>
-          <Button primary>Currency: MXN</Button>
+          <Button >Currency: MXN</Button>
           <Button disabled>Total empleados: 2</Button>
         </ButtonGroup>
         <Table striped bordered hover>
@@ -32,20 +41,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Victor</td>
-              <td>empresa 1</td>
-              <td>$18,000</td>
-              <td>Img</td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Victor</td>
-              <td>empresa 1</td>
-              <td>$18,000</td>
-              <td>Img</td>
-            </tr>
+            <Tabla empleados={empleados} />
           </tbody>
         </Table>
         <button className="btn btn-primary">Nuevo Empleado</button>
