@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Lista de empleados
+Solución para una lista de empleados con las caracteristicas descritas.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tabla de contenido.
+* [Lista de empleados](#lista-de-empleados)
+  * [Tabla de contenidos](#tabla-de-contenido)
+  * [Información General](#lista-de-empleados)
+    * [Screenshot web](#lista-de-empleados)
+    * [Screenshot mobile](#lista-de-empleados)
+    * [Links](#lista-de-empleados)
+  * [Actividades](#actividades)
+  * [Proceso](#lista-de-empleados)
+    * [Tecnologías](#lista-de-empleados)
+    * [Comandos](#lista-de-empleados)
+  * [Referencias](#lista-de-empleados)
 
-## Available Scripts
+## Actividades
 
-In the project directory, you can run:
+* [ ] 1. Crear una tabla que muestre todas las propiedades de los empleados cumpliendo las siguientes características:
+  * [ ] El salario está en pesos mexicanos
+  * [ ] Mostrar el salario en formato de dinero, es decir 16900 se muestra
+como $ 16,900.00.
+  * [ ] Si el salario tuviera decimales se deben mostrar limitados a 2 decimales,
+es decir 16900.333 se debe mostrar como $ 16,900.33.
+* [ ] Adicionalmente en la tabla se debe de poder:
+  * [ ] Agregar empleados (Un botón al principio o final de la tabla).
+  * [ ] Editar empleados (Un botón al principio o final de la tabla).
+  * [ ] El nombre de la empresa no se debe poder modificar.
+  * [ ] Agregar un botón que muestre los salarios en USD, tipo de cambio de US
+$1 = MXN $21.50.
+* [ ] Se debe conservar en un estado (desplegado en una cabecera):
+  * [ ] Total de empleados
+  * [ ] Si se están mostrando los salarios con MXN o USD
+* [ ] Poder filtrar empleados con un campo que permita buscar a los empleados por nombre y empresa:
+  * [ ] El mismo campo debe funcionar para nombre y empresa.
+  * [ ] Se deben actualizar los resultados conforme se vayan escribiendo.
+* [ ] La tabla debe contener las siguientes características, algunas necesitarán agregar clases con CSS:
+  * [ ] Las filas deben de alternar el color del fondo
+  * [ ] Al hacer hover en una fila debe cambiar el color del fondo.
+  * [ ] Los montos deben ir alineados a la derecha
+  * [ ] Los caracteres de los montos deben estar monoespaciado
+  * [ ] Si el salario es menor a 10,000 mostrarlo en color rojo, si es mayor mostrarlo en color verde.
+  * [ ] Los botones de texto (como agregar nuevo empleado o imprimir a consola) deben tener fondo transparente y tener texto y borde en color verde.
+  * [ ] Al hacer hover deben de poner su color de fondo con el mismo color del borde y el texto pasa a ser color blanco, esto debe tener una transición.
+* [ ] Agregar una columna donde se muestre una captura de una imagen para cada uno de los empleados:
+  * [ ] Debe poderse elegirse un empleado y poder capturar un foto con la herramienta de RecordRTC.
+  * [ ] Debe permitir compatibildad con el navegador.
+  * [ ] La imagen debe guardarse de forma local y aparecer en el renglón del empleado elegido en la tabla.
 
-### `yarn start`
+## Referencias.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
