@@ -11,6 +11,11 @@ const App = () => {
 
   //Estados
   const empleados = useState(EMPLEADOS);
+  const [currency, setCurrency] = useState("MXN");
+
+  const changeCurrency = (currency) => {
+    currency === "MXN" ? setCurrency(() => "USD") : setCurrency(() => "MXN");
+  }
 
   return (
     <>
@@ -27,7 +32,7 @@ const App = () => {
           </InputGroup.Append>
         </InputGroup>
         <ButtonGroup>
-          <Button >Currency: MXN</Button>
+          <Button onClick={() => changeCurrency(currency)}>Currency: {currency}</Button>
           <Button disabled>Total empleados: 2</Button>
         </ButtonGroup>
         <Table striped bordered hover>
@@ -41,7 +46,7 @@ const App = () => {
             </tr>
           </thead>
           <tbody>
-            <Tabla empleados={empleados} />
+            <Tabla empleados={empleados} currency={currency} />
           </tbody>
         </Table>
         <button className="btn btn-primary">Nuevo Empleado</button>
