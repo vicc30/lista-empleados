@@ -1,4 +1,5 @@
 import React from 'react';
+import uniqid from 'uniqid';
 
 const Tabla = (props) => {
 
@@ -14,10 +15,10 @@ const Tabla = (props) => {
         }
     }
 
-    return empleados[0].map((empleado) => {
+    return empleados.map((empleado) => {
         return (
             <>
-                <tr key={empleado.id}>
+                <tr key={uniqid()}>
                     <td>{empleado.id}</td>
                     <td>{empleado.nombre}</td>
                     <td>{empleado.empresa}</td>

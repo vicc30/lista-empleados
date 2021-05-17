@@ -1,21 +1,26 @@
 import { Table, InputGroup, FormControl, Button, ButtonGroup } from 'react-bootstrap';
+import Tabla from './components/tableComponent';
+import ModalComponent from './components/modalComponent';
+import { useState } from 'react';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-import Tabla from './components/tableComponent';
-
 import { EMPLEADOS } from './data/data';
-import { useState } from 'react';
 
 const App = () => {
 
   //Estados
-  const empleados = useState(EMPLEADOS);
+  const [empleados, setEmpleados] = useState(EMPLEADOS);
   const [currency, setCurrency] = useState("MXN");
-
   const changeCurrency = (currency) => {
     currency === "MXN" ? setCurrency(() => "USD") : setCurrency(() => "MXN");
   }
+
+  //Modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   return (
     <>
@@ -32,7 +37,7 @@ const App = () => {
           </InputGroup.Append>
         </InputGroup>
         <ButtonGroup>
-          <Button onClick={() => changeCurrency(currency)}>Currency: {currency}</Button>
+          <Button onClick={() => changeCurrency(currency)}>Moneda: {currency}</Button>
           <Button disabled>Total empleados: 2</Button>
         </ButtonGroup>
         <Table striped bordered hover>
@@ -49,8 +54,9 @@ const App = () => {
             <Tabla empleados={empleados} currency={currency} />
           </tbody>
         </Table>
-        <button className="btn btn-primary">Nuevo Empleado</button>
-        <button className="btn btn-secondary ml-md-2">Editar Empleado</button>
+        <Button onClick={handleShow} >Nuevo Empleado</Button>
+        <Button variant="secondary" className="ml-md-2">Editar Empleado</Button>
+        <ModalComponent show={show} handleClose={handleClose} setEmpleados={setEmpleados}/>
       </section>
     </>
   );
