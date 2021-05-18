@@ -66,16 +66,14 @@ const App = () => {
           <tbody>
             <Tabla
               empleados={empleados}
-              currency={currency}
-              counter={counter} />
+              currency={currency}/>
           </tbody>
         </Table>
         <Button onClick={handleShow} >Nuevo Empleado</Button>
         <Button variant="secondary" className="ml-md-2">Editar Empleado</Button>
         <ModalComponent show={show}
           handleClose={handleClose}
-          setEmpleados={setEmpleados}
-          counter={counter} />
+          setEmpleados={setEmpleados}/>
       </section>
     </>
   );

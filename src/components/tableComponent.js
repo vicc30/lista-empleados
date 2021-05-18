@@ -8,10 +8,10 @@ const Tabla = (props) => {
 
     const currencyFormat = (qty) => {
         if (currency === "MXN") {
-            return new Intl.NumberFormat('es-MX').format(qty)
+            return new Intl.NumberFormat('es-MX', { minimumFractionDigits: 2 }).format(qty);
         } else {
             const dolarQty = Math.round(qty / dolar) / 100;
-            return new Intl.NumberFormat('en-US').format(dolarQty);
+            return new Intl.NumberFormat('en-US', { minimumFractionDigits: 2 }).format(dolarQty);
         }
     }
 
