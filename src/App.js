@@ -21,6 +21,27 @@ const App = () => {
     currency === "MXN" ? setCurrency(() => "USD") : setCurrency(() => "MXN");
   }
 
+  // Funcion que cambia de estado a editable
+  const toggleEditable = () => {
+    setEditable((prev) => !prev);
+    const empleados = document.getElementsByClassName('nombre-empleado');
+    const salarios = document.getElementsByClassName('salario-empleado');
+
+    for(var i=0; i<empleados.length; i++){
+      empleados[i].contentEditable=!editable;
+      salarios[i].contentEditable=!editable;
+    }
+  }
+
+  // Funcion que hace editables a los elementos de la lista
+  const makeEditable = () => {
+    toggleEditable();
+  }
+
+  const saveItems = () => {
+    toggleEditable();
+  }
+
   //Modal Nuevo Empleado
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -56,9 +77,9 @@ const App = () => {
         </ButtonGroup>
         <ButtonGroup className="editar">
           <Button onClick={handleShow} >Nuevo Empleado</Button>
-          { editable === false ? 
-            <Button onClick={handleShow} variant="secondary">Editar Empleados</Button> :
-            <Button variant="primary">Guardar</Button> }
+          {editable === false ?
+            <Button onClick={makeEditable} variant="secondary">Editar Empleados</Button> :
+            <Button onClick={saveItems} variant="primary">Guardar</Button>}
         </ButtonGroup>
         <Table striped bordered hover id="myTable">
           <thead>
