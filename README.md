@@ -16,21 +16,21 @@ Solución para una lista de empleados con las caracteristicas descritas.
 
 ## Actividades
 
-* [ ] 1. Crear una tabla que muestre todas las propiedades de los empleados cumpliendo las siguientes características:
+* [x] 1. Crear una tabla que muestre todas las propiedades de los empleados cumpliendo las siguientes características:
   * [x] El salario está en pesos mexicanos
   * [x] Mostrar el salario en formato de dinero, es decir 16900 se muestra
 como $ 16,900.00.
   * [x] Si el salario tuviera decimales se deben mostrar limitados a 2 decimales,
 es decir 16900.333 se debe mostrar como $ 16,900.33.
 * [ ] Adicionalmente en la tabla se debe de poder:
-  * [ ] Agregar empleados (Un botón al principio o final de la tabla).
+  * [x] Agregar empleados (Un botón al principio o final de la tabla).
   * [ ] Editar empleados (Un botón al principio o final de la tabla).
   * [ ] El nombre de la empresa no se debe poder modificar.
   * [x] Agregar un botón que muestre los salarios en USD, tipo de cambio de US
 $1 = MXN $21.50.
 * [ ] Se debe conservar en un estado (desplegado en una cabecera):
   * [ ] Total de empleados
-  * [ ] Si se están mostrando los salarios con MXN o USD
+  * [x] Si se están mostrando los salarios con MXN o USD
 * [ ] Poder filtrar empleados con un campo que permita buscar a los empleados por nombre y empresa:
   * [ ] El mismo campo debe funcionar para nombre y empresa.
   * [ ] Se deben actualizar los resultados conforme se vayan escribiendo.

@@ -1,7 +1,7 @@
 import { Table, InputGroup, FormControl, Button, ButtonGroup } from 'react-bootstrap';
 import Tabla from './components/tableComponent';
 import ModalComponent from './components/modalComponent';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -13,6 +13,9 @@ const App = () => {
   //Estados
   const [empleados, setEmpleados] = useState(EMPLEADOS);
   const [currency, setCurrency] = useState("MXN");
+  const [numeroEmpleados, setNumeroEmpleados] = useState("");
+
+  //Funcion de cambio de moneda en estado
   const changeCurrency = (currency) => {
     currency === "MXN" ? setCurrency(() => "USD") : setCurrency(() => "MXN");
   }
@@ -21,6 +24,17 @@ const App = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  useEffect(() => {
+    counter();
+  });
+
+  // Funcion contadora de empleados.
+  const counter = () => {
+    const number = document.getElementById("myTable").rows.length - 1;
+    setNumeroEmpleados(number);
+  }
+
 
   return (
     <>
@@ -38,9 +52,9 @@ const App = () => {
         </InputGroup>
         <ButtonGroup>
           <Button onClick={() => changeCurrency(currency)}>Moneda: {currency}</Button>
-          <Button disabled>Total empleados: 2</Button>
+          <Button disabled>Total empleados: {numeroEmpleados}</Button>
         </ButtonGroup>
-        <Table striped bordered hover>
+        <Table striped bordered hover id="myTable">
           <thead>
             <tr>
               <th>Id</th>
@@ -51,12 +65,18 @@ const App = () => {
             </tr>
           </thead>
           <tbody>
-            <Tabla empleados={empleados} currency={currency} />
+            <Tabla
+              empleados={empleados}
+              currency={currency}
+              counter={counter} />
           </tbody>
         </Table>
         <Button onClick={handleShow} >Nuevo Empleado</Button>
         <Button variant="secondary" className="ml-md-2">Editar Empleado</Button>
-        <ModalComponent show={show} handleClose={handleClose} setEmpleados={setEmpleados}/>
+        <ModalComponent show={show}
+          handleClose={handleClose}
+          setEmpleados={setEmpleados}
+          counter={counter} />
       </section>
     </>
   );

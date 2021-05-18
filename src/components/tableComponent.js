@@ -4,7 +4,7 @@ import uniqid from 'uniqid';
 const Tabla = (props) => {
 
     const { empleados, currency } = props;
-    const dolar = 21.50 / 100
+    const dolar = 21.50 / 100;
 
     const currencyFormat = (qty) => {
         if (currency === "MXN") {
