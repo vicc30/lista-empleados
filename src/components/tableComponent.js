@@ -1,9 +1,10 @@
 import React from 'react';
-import uniqid from 'uniqid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Tabla = (props) => {
 
-    const { empleados, currency } = props;
+    const { empleados, currency, handleUpdate } = props;
     const dolar = 21.50 / 100;
 
     const currencyFormat = (qty) => {
@@ -18,12 +19,13 @@ const Tabla = (props) => {
     return empleados.map((empleado) => {
         return (
             <>
-                <tr key={uniqid()}>
+                <tr key={empleado.id}>
                     <td>{empleado.id}</td>
                     <td>{empleado.nombre}</td>
                     <td>{empleado.empresa}</td>
                     <td>$ {currencyFormat(empleado.salario)}</td>
-                    <td>{empleado.imagen === "" ? "Sin imagen" : empleado.imagen}</td>
+                    <td>{empleado.imagen === "" ? <FontAwesomeIcon icon={faUserCircle} />  : empleado.imagen}</td>
+                    <td><FontAwesomeIcon icon={faEdit} onClick={()=>handleUpdate(empleado.id)}/></td>
                 </tr>
             </>
         );

@@ -29,7 +29,7 @@ es decir 16900.333 se debe mostrar como $ 16,900.33.
   * [x] Agregar un botón que muestre los salarios en USD, tipo de cambio de US
 $1 = MXN $21.50.
 * [ ] Se debe conservar en un estado (desplegado en una cabecera):
-  * [ ] Total de empleados
+  * [x] Total de empleados
   * [x] Si se están mostrando los salarios con MXN o USD
 * [ ] Poder filtrar empleados con un campo que permita buscar a los empleados por nombre y empresa:
   * [ ] El mismo campo debe funcionar para nombre y empresa.
@@ -50,3 +50,4 @@ $1 = MXN $21.50.
 ## Referencias.
 
 * [Int Number Format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)
+* [ECMA Script](https://tc39.es/ecma402/#sec-intl-numberformat-constructor)

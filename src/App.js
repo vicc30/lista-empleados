@@ -15,12 +15,18 @@ const App = () => {
   const [currency, setCurrency] = useState("MXN");
   const [numeroEmpleados, setNumeroEmpleados] = useState("");
 
+  // Funcion que busca empleados por id
+  const handleUpdate = (id) => {
+    const match = empleados.filter((key) => key.id === id);
+    console.log(match);
+  }
+
   //Funcion de cambio de moneda en estado
   const changeCurrency = (currency) => {
     currency === "MXN" ? setCurrency(() => "USD") : setCurrency(() => "MXN");
   }
 
-  //Modal
+  //Modal Nuevo Empleado
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -32,7 +38,7 @@ const App = () => {
   // Funcion contadora de empleados.
   const counter = () => {
     const number = document.getElementById("myTable").rows.length - 1;
-    setNumeroEmpleados(()=>number);
+    setNumeroEmpleados(() => number);
   }
 
   return (
@@ -61,19 +67,20 @@ const App = () => {
               <th>Empresa</th>
               <th>Salario</th>
               <th>Imagen</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <Tabla
               empleados={empleados}
-              currency={currency}/>
+              currency={currency} 
+              handleUpdate={handleUpdate}/>
           </tbody>
         </Table>
         <Button onClick={handleShow} >Nuevo Empleado</Button>
-        <Button variant="secondary" className="ml-md-2">Editar Empleado</Button>
         <ModalComponent show={show}
           handleClose={handleClose}
-          setEmpleados={setEmpleados}/>
+          setEmpleados={setEmpleados} />
       </section>
     </>
   );

@@ -7,20 +7,22 @@ const ModalComponent = (props) => {
     const { handleClose, show, setEmpleados } = props;
 
     const handleNew = () => {
-        const nombre = document.getElementById("formName");
-        const empresa = document.getElementById("formCompany");
-        const salario = document.getElementById("formSalary");
-        setEmpleados((prev) => [...prev, {
-            id:uniqid(), 
-            nombre: nombre.value,
-            empresa: empresa.value,
-            salario: salario.value,
-            imagen: ""
-        }]);
+        let nombre = document.getElementById("formName").value;
+        let empresa = document.getElementById("formCompany").value;
+        let salario = document.getElementById("formSalary").value;
+        if (nombre !== "" && empresa !== "" && salario !=="") {
+            setEmpleados((prev) => [...prev, {
+                id: uniqid(),
+                nombre: nombre,
+                empresa: empresa,
+                salario: salario,
+                imagen: ""
+            }]);
+        }
         //Reset form
-        nombre.value = "";
-        empresa.value = "";
-        salario.value = "";
+        nombre = "";
+        empresa = "";
+        salario = "";
     }
 
     return (
@@ -37,15 +39,15 @@ const ModalComponent = (props) => {
                 <Form id="modalEmpleado">
                     <Form.Group controlId="formName">
                         <Form.Label>Nombre</Form.Label>
-                        <Form.Control type="text" placeholder="Ingresa el nombre completo" />
+                        <Form.Control type="text" placeholder="Ingresa el nombre completo" required />
                     </Form.Group>
                     <Form.Group controlId="formCompany">
                         <Form.Label>Empresa</Form.Label>
-                        <Form.Control type="text" placeholder="Ingresa el nombre de la empresa" />
+                        <Form.Control type="text" placeholder="Ingresa el nombre de la empresa" required />
                     </Form.Group>
                     <Form.Group controlId="formSalary">
                         <Form.Label>Salario</Form.Label>
-                        <Form.Control type="number" placeholder="Ingresa el salario" />
+                        <Form.Control type="number" placeholder="Ingresa el salario" required />
                     </Form.Group>
                 </Form>
             </Modal.Body>
