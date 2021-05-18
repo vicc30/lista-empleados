@@ -7,16 +7,20 @@ const ModalComponent = (props) => {
     const { handleClose, show, setEmpleados } = props;
 
     const handleNew = () => {
-        const nombre = document.getElementById("formName").value;
-        const empresa = document.getElementById("formCompany").value;
-        const salario = document.getElementById("formSalary").value;
+        const nombre = document.getElementById("formName");
+        const empresa = document.getElementById("formCompany");
+        const salario = document.getElementById("formSalary");
         setEmpleados((prev) => [...prev, {
             id:uniqid(), 
-            nombre: nombre,
-            empresa: empresa,
-            salario: salario,
+            nombre: nombre.value,
+            empresa: empresa.value,
+            salario: salario.value,
             imagen: ""
         }]);
+        //Reset form
+        nombre.value = "";
+        empresa.value = "";
+        salario.value = "";
     }
 
     return (

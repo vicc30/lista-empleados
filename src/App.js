@@ -32,9 +32,8 @@ const App = () => {
   // Funcion contadora de empleados.
   const counter = () => {
     const number = document.getElementById("myTable").rows.length - 1;
-    setNumeroEmpleados(number);
+    setNumeroEmpleados(()=>number);
   }
-
 
   return (
     <>
