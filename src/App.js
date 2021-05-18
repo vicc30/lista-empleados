@@ -14,12 +14,7 @@ const App = () => {
   const [empleados, setEmpleados] = useState(EMPLEADOS);
   const [currency, setCurrency] = useState("MXN");
   const [numeroEmpleados, setNumeroEmpleados] = useState("");
-
-  // Funcion que busca empleados por id
-  const handleUpdate = (id) => {
-    const match = empleados.filter((key) => key.id === id);
-    console.log(match);
-  }
+  const [editable, setEditable] = useState(false);
 
   //Funcion de cambio de moneda en estado
   const changeCurrency = (currency) => {
@@ -59,6 +54,12 @@ const App = () => {
           <Button onClick={() => changeCurrency(currency)}>Moneda: {currency}</Button>
           <Button disabled>Total empleados: {numeroEmpleados}</Button>
         </ButtonGroup>
+        <ButtonGroup className="editar">
+          <Button onClick={handleShow} >Nuevo Empleado</Button>
+          { editable === false ? 
+            <Button onClick={handleShow} variant="secondary">Editar Empleados</Button> :
+            <Button variant="primary">Guardar</Button> }
+        </ButtonGroup>
         <Table striped bordered hover id="myTable">
           <thead>
             <tr>
@@ -67,17 +68,15 @@ const App = () => {
               <th>Empresa</th>
               <th>Salario</th>
               <th>Imagen</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
             <Tabla
               empleados={empleados}
-              currency={currency} 
-              handleUpdate={handleUpdate}/>
+              currency={currency}
+            />
           </tbody>
         </Table>
-        <Button onClick={handleShow} >Nuevo Empleado</Button>
         <ModalComponent show={show}
           handleClose={handleClose}
           setEmpleados={setEmpleados} />

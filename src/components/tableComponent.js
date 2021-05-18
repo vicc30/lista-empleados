@@ -1,10 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Tabla = (props) => {
 
-    const { empleados, currency, handleUpdate } = props;
+    const { empleados, currency } = props;
     const dolar = 21.50 / 100;
 
     const currencyFormat = (qty) => {
@@ -21,11 +21,10 @@ const Tabla = (props) => {
             <>
                 <tr key={empleado.id}>
                     <td>{empleado.id}</td>
-                    <td>{empleado.nombre}</td>
+                    <td className="nombre-empleado">{empleado.nombre}</td>
                     <td>{empleado.empresa}</td>
-                    <td>$ {currencyFormat(empleado.salario)}</td>
+                    <td className="salario-empleado">$ {currencyFormat(empleado.salario)}</td>
                     <td>{empleado.imagen === "" ? <FontAwesomeIcon icon={faUserCircle} />  : empleado.imagen}</td>
-                    <td><FontAwesomeIcon icon={faEdit} onClick={()=>handleUpdate(empleado.id)}/></td>
                 </tr>
             </>
         );

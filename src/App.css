@@ -10,3 +10,7 @@ h1 {
 .btn-group {
   float: right;
 }
+
+.editar {
+  float: left;
+}
