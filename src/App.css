@@ -28,6 +28,8 @@ button.btn {
   background-color: transparent;
   border: 1px solid green;
   color: green;
+  transition: background-color ease 1s;
+  border-color: rgb(0 128 0 ) !important;
 }
 
 button.btn:hover,
@@ -42,6 +44,7 @@ button.btn:active {
 .show > .btn-primary.dropdown-toggle:focus,
 .btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgb(0 128 0 / 50%);
+  border-color: rgb(0 128 0 / 50%) !important;
 }
 
 .btn-primary:disabled {
