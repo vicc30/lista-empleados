@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const CameraComponent = (props) => {
-    const { imagen } = props;
-    
-    // Camera script
+    const { id } = props;
     var streaming = false,
-        //Selectores
-        video = document.querySelector('#video'),
-        canvas = document.querySelector('#canvas'),
-        photo = document.querySelector('#photo'),
+        video = document.getElementById('video' + id),
+        canvas = document.getElementById('canvas' + id),
+        photo = document.getElementById('photo' + id),
         width = 160,
         height = 0;
-
+    useEffect(() => {
+        updateSelector(id);
+    });
+    // Camera script
+    function updateSelector(id) {
+        streaming = false;
+        video = document.getElementById('video' + id);
+        canvas = document.getElementById('canvas' + id);
+        photo = document.getElementById('photo' + id);
+        width = 160;
+        height = 0;
+    }
     function takepicture() {
         navigator.getMedia = (navigator.getUserMedia ||
             navigator.webkitGetUserMedia ||
             navigator.mozGetUserMedia ||
             navigator.msGetUserMedia);
-    
+
         //Parametros iniciales
         navigator.getMedia(
             {
@@ -36,7 +44,7 @@ const CameraComponent = (props) => {
                 console.log("An error occured! " + err);
             }
         );
-    
+
         if (video) {
             video.addEventListener('canplay', function (ev) {
                 if (!streaming) {
@@ -56,15 +64,15 @@ const CameraComponent = (props) => {
         photo.setAttribute('src', data);
     }
 
-    const takePhoto = () => {
-        document.querySelector('#output').style.display="";
-        document.querySelector('#camera').style.display="none";
+    const takePhoto = (id) => {
+        document.getElementById('output' + id).style.display = "";
+        document.getElementById('camera' + id).style.display = "none";
         takepicture();
     };
 
-    const initialize = () => {
-        document.querySelector('#output').style.display="none";
-        document.querySelector('#camera').style.display="";
+    const initialize = (id) => {
+        document.getElementById('output' + id).style.display = "none";
+        document.getElementById('camera' + id).style.display = "";
         takepicture();
     }
 
@@ -72,15 +80,15 @@ const CameraComponent = (props) => {
         <>
             {
                 <>
-                    <div className="camera" style={{display:"none"}} id="camera">
-                        <video id="video">Video no disponible</video>
-                        <button className="btn" id="startbutton" onClick={takePhoto}>Tomar una foto 1</button>
+                    <div className="camera" style={{ display: "none" }} id={"camera" + id}>
+                        <video id={"video" + id}>Video no disponible</video>
+                        <button className="btn" onClick={() => takePhoto(id)}>Tomar foto</button>
                     </div>
-                    <canvas id="canvas">
+                    <canvas id={"canvas" + id}>
                     </canvas>
-                    <div className="output" id="output">
-                        <img id="photo" alt="" src={imagen} />
-                        <button className="btn" id="startbutton" onClick={initialize}>Tomar una foto 2</button>
+                    <div className="output" id={"output" + id}>
+                        <img id={"photo" + id} alt="" src={""} />
+                        <button className="btn" onClick={() => initialize(id)}>Iniciar camara</button>
                     </div>
                 </>
             }

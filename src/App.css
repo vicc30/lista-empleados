@@ -65,14 +65,14 @@ button.btn:active {
   gap:10px;
 }
 
-#photo, #video {
+img, video {
   border: 1px solid black;
   box-shadow: 2px 2px 3px black;
   max-width: 160px;
   min-height: 120px;
 }
 
-#canvas {
+canvas {
   display: none;
 }
 

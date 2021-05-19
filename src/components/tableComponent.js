@@ -25,7 +25,7 @@ const Tabla = (props) => {
                     {!editable ?
                         <td style={empleado.salario >= 10000 ? {color:"green"} : {color:"red"}} className="salario-empleado">$ {currencyFormat(empleado.salario)}</td>
                         : <td className="salario-empleado">{empleado.salario}</td>}
-                    <td><CameraComponent imagen={empleado.imagen}/></td>
+                    <td><CameraComponent id={empleado.id}/></td>
                 </tr>
             </>
         );
