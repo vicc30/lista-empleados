@@ -29,7 +29,7 @@ button.btn {
   border: 1px solid green;
   color: green;
   transition: background-color ease 1s;
-  border-color: rgb(0 128 0 ) !important;
+  border-color: rgb(0 128 0) !important;
 }
 
 button.btn:hover,
@@ -55,4 +55,23 @@ button.btn:active {
 .form-control:focus {
   border-color: rgb(0 128 0 / 50%);
   box-shadow: 0 0 0 0.2rem rgb(0 128 0 / 20%);
+}
+
+.camera, .output {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:10px;
+}
+
+#photo, #video {
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px black;
+  max-width: 160px;
+  min-height: 120px;
+}
+
+#canvas {
+  display: none;
 }

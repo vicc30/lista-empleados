@@ -1,6 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import CameraComponent from './camaraComponent';
 
 const Tabla = (props) => {
 
@@ -26,7 +25,7 @@ const Tabla = (props) => {
                     {!editable ?
                         <td style={empleado.salario >= 10000 ? {color:"green"} : {color:"red"}} className="salario-empleado">$ {currencyFormat(empleado.salario)}</td>
                         : <td className="salario-empleado">{empleado.salario}</td>}
-                    <td>{empleado.imagen === "" ? <FontAwesomeIcon icon={faUserCircle} /> : empleado.imagen}</td>
+                    <td><CameraComponent imagen={empleado.imagen}/></td>
                 </tr>
             </>
         );
