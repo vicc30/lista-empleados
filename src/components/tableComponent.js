@@ -19,7 +19,7 @@ const Tabla = (props) => {
     return empleados.map((empleado) => {
         return (
             <>
-                <tr key={empleado.id}>
+                <tr key={empleado.id} id={empleado.id}>
                     <td>{empleado.id}</td>
                     <td className="nombre-empleado">{empleado.nombre}</td>
                     <td>{empleado.empresa}</td>
