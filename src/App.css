@@ -3,8 +3,8 @@ h1 {
 }
 
 .input-group {
-    max-width: 600px;
-    margin: auto;
+  max-width: 600px;
+  margin: auto;
 }
 
 .btn-group {
@@ -19,6 +19,37 @@ h1 {
   text-align: right;
 }
 
-.id, thead{
+.id,
+thead {
   text-align: center;
+}
+
+button.btn {
+  background-color: transparent;
+  border: 1px solid green;
+  color: green;
+}
+
+button.btn:hover,
+button.btn:focus,
+button.btn:active {
+  background-color: green !important;
+  color: white !important;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus,
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgb(0 128 0 / 50%);
+}
+
+.btn-primary:disabled {
+  background-color: rgb(0 128 0 / 50%);
+  border-color: rgb(0 128 0 / 50%);
+}
+
+.form-control:focus {
+  border-color: rgb(0 128 0 / 50%);
+  box-shadow: 0 0 0 0.2rem rgb(0 128 0 / 20%);
 }
