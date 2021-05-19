@@ -22,23 +22,23 @@ Solución para una lista de empleados con las caracteristicas descritas.
 como $ 16,900.00.
   * [x] Si el salario tuviera decimales se deben mostrar limitados a 2 decimales,
 es decir 16900.333 se debe mostrar como $ 16,900.33.
-* [ ] Adicionalmente en la tabla se debe de poder:
+* [x] Adicionalmente en la tabla se debe de poder:
   * [x] Agregar empleados (Un botón al principio o final de la tabla).
-  * [ ] Editar empleados (Un botón al principio o final de la tabla).
-  * [ ] El nombre de la empresa no se debe poder modificar.
+  * [x] Editar empleados (Un botón al principio o final de la tabla).
+  * [x] El nombre de la empresa no se debe poder modificar.
   * [x] Agregar un botón que muestre los salarios en USD, tipo de cambio de US
 $1 = MXN $21.50.
-* [ ] Se debe conservar en un estado (desplegado en una cabecera):
+* [x] Se debe conservar en un estado (desplegado en una cabecera):
   * [x] Total de empleados
   * [x] Si se están mostrando los salarios con MXN o USD
 * [ ] Poder filtrar empleados con un campo que permita buscar a los empleados por nombre y empresa:
   * [ ] El mismo campo debe funcionar para nombre y empresa.
   * [ ] Se deben actualizar los resultados conforme se vayan escribiendo.
 * [ ] La tabla debe contener las siguientes características, algunas necesitarán agregar clases con CSS:
-  * [ ] Las filas deben de alternar el color del fondo
-  * [ ] Al hacer hover en una fila debe cambiar el color del fondo.
+  * [x] Las filas deben de alternar el color del fondo
+  * [x] Al hacer hover en una fila debe cambiar el color del fondo.
   * [ ] Los montos deben ir alineados a la derecha
-  * [ ] Los caracteres de los montos deben estar monoespaciado
+  * [x] Los caracteres de los montos deben estar monoespaciado
   * [ ] Si el salario es menor a 10,000 mostrarlo en color rojo, si es mayor mostrarlo en color verde.
   * [ ] Los botones de texto (como agregar nuevo empleado o imprimir a consola) deben tener fondo transparente y tener texto y borde en color verde.
   * [ ] Al hacer hover deben de poner su color de fondo con el mismo color del borde y el texto pasa a ser color blanco, esto debe tener una transición.
@@ -51,3 +51,4 @@ $1 = MXN $21.50.
 
 * [Int Number Format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat)
 * [ECMA Script](https://tc39.es/ecma402/#sec-intl-numberformat-constructor)
+* [Updating a value in a nested array of objects](https://javascript.plainenglish.io/react-updating-a-value-in-state-array-7bae7c7eaef9)

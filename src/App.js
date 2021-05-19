@@ -41,10 +41,10 @@ const App = () => {
 
   const updateData = (idx, id, name, salary) => {
     const match = empleados[idx].id === id.toString();
-    setEmpleados((prev)=>{
-      if(match){
+    setEmpleados((prev) => {
+      if (match) {
         let newArr = [...prev];
-        newArr[idx] = {...newArr[idx], nombre:name, salario:salary}
+        newArr[idx] = { ...newArr[idx], nombre: name, salario: salary }
         return newArr;
       } else return [...prev]
     })
@@ -54,9 +54,9 @@ const App = () => {
   const saveData = () => {
     const table = document.getElementById("myTable");
     for (var i = 0; i < empleados.length; i++) {
-      const id = table.rows[i+1].childNodes[0].innerText;
-      const name = table.rows[i+1].childNodes[1].innerText;
-      const salary = parseFloat(table.rows[i+1].childNodes[3].innerText.toString().replace(/[^0-9.]/g, ""));
+      const id = table.rows[i + 1].childNodes[0].innerText;
+      const name = table.rows[i + 1].childNodes[1].innerText;
+      const salary = parseFloat(table.rows[i + 1].childNodes[3].innerText.toString().replace(/[^0-9.]/g, ""));
       updateData(i, id, name, salary);
     }
     console.log(empleados);
@@ -120,6 +120,7 @@ const App = () => {
             <Tabla
               empleados={empleados}
               currency={currency}
+              editable={editable}
             />
           </tbody>
         </Table>

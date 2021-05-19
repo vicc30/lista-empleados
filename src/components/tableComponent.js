@@ -4,7 +4,7 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 
 const Tabla = (props) => {
 
-    const { empleados, currency } = props;
+    const { empleados, currency, editable } = props;
     const dolar = 21.50 / 100;
 
     const currencyFormat = (qty) => {
@@ -23,8 +23,10 @@ const Tabla = (props) => {
                     <td>{empleado.id}</td>
                     <td className="nombre-empleado">{empleado.nombre}</td>
                     <td>{empleado.empresa}</td>
-                    <td className="salario-empleado">$ {currencyFormat(empleado.salario)}</td>
-                    <td>{empleado.imagen === "" ? <FontAwesomeIcon icon={faUserCircle} />  : empleado.imagen}</td>
+                    {!editable ?
+                        <td className="salario-empleado">$ {currencyFormat(empleado.salario)}</td>
+                        : <td className="salario-empleado">{empleado.salario}</td>}
+                    <td>{empleado.imagen === "" ? <FontAwesomeIcon icon={faUserCircle} /> : empleado.imagen}</td>
                 </tr>
             </>
         );
