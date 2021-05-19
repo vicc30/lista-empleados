@@ -37,9 +37,9 @@ $1 = MXN $21.50.
 * [ ] La tabla debe contener las siguientes características, algunas necesitarán agregar clases con CSS:
   * [x] Las filas deben de alternar el color del fondo
   * [x] Al hacer hover en una fila debe cambiar el color del fondo.
-  * [ ] Los montos deben ir alineados a la derecha
+  * [x] Los montos deben ir alineados a la derecha
   * [x] Los caracteres de los montos deben estar monoespaciado
-  * [ ] Si el salario es menor a 10,000 mostrarlo en color rojo, si es mayor mostrarlo en color verde.
+  * [x] Si el salario es menor a 10,000 mostrarlo en color rojo, si es mayor mostrarlo en color verde.
   * [ ] Los botones de texto (como agregar nuevo empleado o imprimir a consola) deben tener fondo transparente y tener texto y borde en color verde.
   * [ ] Al hacer hover deben de poner su color de fondo con el mismo color del borde y el texto pasa a ser color blanco, esto debe tener una transición.
 * [ ] Agregar una columna donde se muestre una captura de una imagen para cada uno de los empleados:

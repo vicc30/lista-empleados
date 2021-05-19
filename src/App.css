@@ -14,3 +14,11 @@ h1 {
 .editar {
   float: left;
 }
+
+.salario-empleado {
+  text-align: right;
+}
+
+.id, thead{
+  text-align: center;
+}

@@ -20,11 +20,11 @@ const Tabla = (props) => {
         return (
             <>
                 <tr key={empleado.id} id={empleado.id}>
-                    <td>{empleado.id}</td>
+                    <td className="id">{empleado.id}</td>
                     <td className="nombre-empleado">{empleado.nombre}</td>
                     <td>{empleado.empresa}</td>
                     {!editable ?
-                        <td className="salario-empleado">$ {currencyFormat(empleado.salario)}</td>
+                        <td style={empleado.salario >= 10000 ? {color:"green"} : {color:"red"}} className="salario-empleado">$ {currencyFormat(empleado.salario)}</td>
                         : <td className="salario-empleado">{empleado.salario}</td>}
                     <td>{empleado.imagen === "" ? <FontAwesomeIcon icon={faUserCircle} /> : empleado.imagen}</td>
                 </tr>
