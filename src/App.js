@@ -82,6 +82,32 @@ const App = () => {
     setNumeroEmpleados(() => number);
   }
 
+  // Funcion que oculta filas
+
+  const ocultarFilas = (id) => {
+    const fila = document.getElementById(id);
+    fila.style.display = "none"
+  }
+
+  const mostrarFilas = (id) => {
+    const fila = document.getElementById(id);
+    fila.style.display = "";
+  }
+
+  //Funcion de busqueda
+  const buscar = (e) => {
+    //Busca si no estan escritos y los pone en hidden.
+    const match = e.target.value.toLowerCase();
+    empleados.forEach((empleado) => {
+      if (empleado.nombre.toLowerCase().match(match) === null && empleado.empresa.toLowerCase().match(match) === null) {
+        ocultarFilas(empleado.id);
+      } else {
+        mostrarFilas(empleado.id);
+      }
+    });
+
+  }
+
   return (
     <>
       <section className="container-fluid">
@@ -91,6 +117,7 @@ const App = () => {
             placeholder="Buscar Empleado o Empresa"
             aria-label="Buscar"
             aria-describedby="buscar"
+            onChange={buscar}
           />
           <InputGroup.Append>
             <Button variant="outline-secondary">Buscar</Button>
