@@ -74,7 +74,7 @@ const App = () => {
 
   useEffect(() => {
     counter();
-  }, []);
+  });
 
   // Funcion contadora de empleados.
   const counter = () => {
