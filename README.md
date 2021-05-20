@@ -9,8 +9,9 @@ Solución para una lista de empleados con las caracteristicas descritas.
     - [Instalación y prueba local](#instalación-y-prueba-local)
     - [Tecnologías usadas.](#tecnologías-usadas)
     - [Screenshot](#screenshot)
+    - [Live preview](#live-preview)
   - [Estado del proyecto](#estado-del-proyecto)
-    - [Bugs, erros y fixes](#bugs-erros-y-fixes)
+    - [Bugs, errores y fixes](#bugs-errores-y-fixes)
   - [Referencias.](#referencias)
 
 ## Información General
@@ -74,11 +75,15 @@ $1 = MXN $21.50.
 
 ![](src/assets/images/screen-web.png)
 
+### Live preview
+
+Link al prototipo en vivo en Heroku -> [Link](https://table-demo1.herokuapp.com/) 
+
 ## Estado del proyecto
 
 Las actividades básicas se finalizaron sin embargo se realizarán actualizaciones de limpieza de código y mejorar funcionabilidad.
 
-### Bugs, erros y fixes
+### Bugs, errores y fixes
 
 Favor de reportarlo en el repo, sección issues-> [link](https://github.com/vicc30/lista-empleados/issues)
 
