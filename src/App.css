@@ -1,38 +1,81 @@
-.App {
+h1 {
+  margin: 3rem 0;
+}
+
+.input-group {
+  max-width: 600px;
+  margin: auto;
+}
+
+.btn-group {
+  float: right;
+}
+
+.editar {
+  float: left;
+}
+
+.salario-empleado {
+  text-align: right;
+}
+
+.id,
+thead {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button.btn {
+  background-color: transparent;
+  border: 1px solid green;
+  color: green;
+  transition: background-color ease 1s;
+  border-color: rgb(0 128 0) !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button.btn:hover,
+button.btn:focus,
+button.btn:active {
+  background-color: green !important;
+  color: white !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus,
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgb(0 128 0 / 50%);
+  border-color: rgb(0 128 0 / 50%) !important;
+}
+
+.btn-primary:disabled {
+  background-color: rgb(0 128 0 / 50%);
+  border-color: rgb(0 128 0 / 50%);
+}
+
+.form-control:focus {
+  border-color: rgb(0 128 0 / 50%);
+  box-shadow: 0 0 0 0.2rem rgb(0 128 0 / 20%);
+}
+
+.camera, .output {
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap:10px;
 }
 
-.App-link {
-  color: #61dafb;
+img, video {
+  border: 1px solid black;
+  box-shadow: 2px 2px 3px black;
+  max-width: 160px;
+  min-height: 120px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+canvas {
+  display: none;
+}
+
+img {
+  min-width: 160px;
 }
