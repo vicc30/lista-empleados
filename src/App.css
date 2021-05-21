@@ -9,6 +9,7 @@ h1 {
 
 .btn-group {
   float: right;
+  margin: 15px 0;
 }
 
 .editar {
@@ -78,4 +79,10 @@ canvas {
 
 img {
   min-width: 160px;
+}
+
+@media screen and (max-width: 768px) {
+  .btn-group{
+    float: left;
+  }
 }

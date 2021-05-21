@@ -40,7 +40,7 @@ $1 = MXN $21.50.
 * [x] Poder filtrar empleados con un campo que permita buscar a los empleados por nombre y empresa:
   * [x] El mismo campo debe funcionar para nombre y empresa.
   * [x] Se deben actualizar los resultados conforme se vayan escribiendo.
-* [ ] La tabla debe contener las siguientes características, algunas necesitarán agregar clases con CSS:
+* [x] La tabla debe contener las siguientes características, algunas necesitarán agregar clases con CSS:
   * [x] Las filas deben de alternar el color del fondo
   * [x] Al hacer hover en una fila debe cambiar el color del fondo.
   * [x] Los montos deben ir alineados a la derecha
